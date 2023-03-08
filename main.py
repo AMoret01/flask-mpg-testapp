@@ -31,8 +31,8 @@ def predictions():
     
     # El orden de los datos tiene que ser el mismo que en el modelo
     new_data=[cylinders,displacement,horsepower,weight,acceleration,model_year,origin]
-
-    return jsonify(loaded_model.predict([new_data])[0])
+    resultado={"mpg":loaded_model.predict([new_data])[0]}
+    return jsonify(resultado)
 
 
 if __name__ == '__main__':
